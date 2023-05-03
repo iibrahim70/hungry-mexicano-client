@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value; 
+    const email = form.email.value; 
+    const password = form.password.value; 
+    const photo = form.photo.value;
+    console.log(name, email, password, photo);
+    createUser(email, password)
+    .then(res => {
+      const createdUser = res.user; 
+      console.log(createdUser);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
   return (
-    <form className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
+    <form onSubmit={handleRegister} className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
       <div className="md:w-1/3 max-w-sm">
         <img
           src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
