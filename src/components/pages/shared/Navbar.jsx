@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Navbar = () => {
+  const {user} = useContext(AuthContext);
   return (
     <div className='bg-slate-400'>
-      <div className="navbar w-4/5 mx-auto">
+      <div className="navbar lg:w-4/5 mx-auto">
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case text-xl">Hungry Mexicano</a>
+          <a className="btn btn-ghost normal-case lg:text-xl">Hungry Mexicano</a>
         </div>
         <div className="flex-1 gap-5">
-          <Link className='normal-case text-xl'>Home</Link>
-          <Link className='normal-case text-xl'>Blog</Link>
+          <Link className='normal-case lg:text-xl'>Home</Link>
+          <Link className='normal-case lg:text-xl'>Blog</Link>
         </div>
-        <div className="flex-none gap-2">
+        { user ? <div className="flex-none gap-2">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
@@ -30,7 +32,7 @@ const Navbar = () => {
               <li><a>Logout</a></li>
             </ul>
           </div>
-        </div>
+        </div> : <Link to='/login'><button>Login</button></Link>}
       </div>
     </div>
   );
