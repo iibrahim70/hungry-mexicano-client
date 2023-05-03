@@ -11,8 +11,8 @@ const Navbar = () => {
           <Link className="normal-case lg:text-xl" to='/'>Hungry Mexicano</Link>
         </div>
         <div className="flex-1 gap-5">
-          <Link className='normal-case lg:text-xl'>Home</Link>
-          <Link className='normal-case lg:text-xl'>Blog</Link>
+          <Link className='normal-case lg:text-xl' to='/'>Home</Link>
+          <Link className='normal-case lg:text-xl' to='/blog'>Blog</Link>
         </div>
         { user ? <div className="flex-none gap-2">
           <div className="dropdown dropdown-end">
