@@ -8,7 +8,7 @@ const Navbar = () => {
     <div className='bg-slate-400'>
       <div className="navbar lg:w-4/5 mx-auto">
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case lg:text-xl">Hungry Mexicano</a>
+          <Link className="normal-case lg:text-xl" to='/'>Hungry Mexicano</Link>
         </div>
         <div className="flex-1 gap-5">
           <Link className='normal-case lg:text-xl'>Home</Link>
