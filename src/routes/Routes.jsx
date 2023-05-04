@@ -6,6 +6,7 @@ import Register from "../components/pages/Login/Register";
 import ErrorPage from "../components/pages/errorpage/ErrorPage";
 import Blog from "../components/pages/blog/Blog";
 import RecipeDetails from "../components/pages/home/RecipeDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/recipe/:id',
-        element: <RecipeDetails></RecipeDetails>
+        element: <PrivateRoute><RecipeDetails></RecipeDetails></PrivateRoute>
       },
     ]
   }
