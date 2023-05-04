@@ -21,8 +21,9 @@ const RecipeDetails = () => {
       <div className='grid grid-cols-3 lg:w-4/5 mx-auto my-10'>
         <div className="card w-80 bg-base-100 shadow-xl mb-5">
           <div className="card-body">
-            <h2>{recipeDetails.recipe_one.recipe_name1}</h2>
-            <p>Years of experience: {}</p>
+            <h2 className='text-2xl font-bold'>{recipeDetails.recipe_one.recipe_name1}</h2>
+            <p>Ingredients -</p>
+            {recipeDetails?.recipe_one?.ingredients?.map((item, index) => <li key={index}>{item}</li>)}
             <p>Cooking Method: {recipeDetails.recipe_one.cooking_method1}</p>
             <p>Ratings: {recipeDetails.recipe_one.rating1}</p>
             <button className="btn btn-primary">Favourite</button>
@@ -30,8 +31,9 @@ const RecipeDetails = () => {
         </div>
         <div className="card w-80 bg-base-100 shadow-xl mb-5">
           <div className="card-body">
-            <h2>{recipeDetails.recipe_two.recipe_name2}</h2>
-            <p>Years of experience: { }</p>
+            <h2 className='text-2xl font-bold'>{recipeDetails.recipe_two.recipe_name2}</h2>
+            <p>Ingredients -</p>
+            {recipeDetails?.recipe_two?.ingredients?.map((item, index) => <li key={index}>{item}</li>)}
             <p>Cooking Method: {recipeDetails.recipe_two.cooking_method2}</p>
             <p>Ratings: {recipeDetails.recipe_two.rating2}</p>
             <button className="btn btn-primary">Favourite</button>
@@ -39,8 +41,9 @@ const RecipeDetails = () => {
         </div>
         <div className="card w-80 bg-base-100 shadow-xl mb-5">
           <div className="card-body">
-            <h2>{recipeDetails.recipe_three.recipe_name3}</h2>
-            <p>Years of experience: { }</p>
+            <h2 className='text-2xl font-bold'>{recipeDetails.recipe_three.recipe_name3}</h2>
+            <p>Ingredients -</p>
+            {recipeDetails?.recipe_three?.ingredients?.map((item, index) => <li key={index}>{item}</li>)}
             <p>Cooking Method: {recipeDetails.recipe_three.cooking_method3}</p>
             <p>Ratings: {recipeDetails.recipe_three.rating3}</p>
             <button className="btn btn-primary">Favourite</button>
