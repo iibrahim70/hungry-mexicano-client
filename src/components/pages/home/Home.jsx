@@ -14,12 +14,12 @@ const Home = () => {
 
   return (
     <div>
+      <Carousel></Carousel>
       <div className='grid grid-cols-3 lg:w-4/5 mx-auto my-10'>
         {
           recipes.map(recipe => <CardRecipe key={recipe.id} recipe={recipe}></CardRecipe>)
         }
       </div>
-      {/* <Carousel></Carousel> */}
     </div>
   );
 };
