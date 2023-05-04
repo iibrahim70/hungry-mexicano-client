@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import ActiveLink from '../../layout/ActiveLink';
 
 const Navbar = () => {
   const {user, logOut} = useContext(AuthContext);
@@ -12,14 +13,14 @@ const Navbar = () => {
   }
 
   return (
-    <div className='bg-slate-400'>
+    <div className='bg-base-300'>
       <div className="navbar lg:w-4/5 mx-auto">
         <div className="flex-1">
           <Link className="normal-case text-base font-bold lg:text-xl" to='/'>Hungry Mexicano</Link>
         </div>
         <div className="flex-1 gap-5 hidden lg:flex">
-          <Link className='normal-case lg:text-xl' to='/'>Home</Link>
-          <Link className='normal-case lg:text-xl' to='/blog'>Blog</Link>
+          <ActiveLink className='normal-case lg:text-xl' to='/'>Home</ActiveLink>
+          <ActiveLink className='normal-case lg:text-xl' to='/blog'>Blog</ActiveLink>
         </div>
         { user ? <div className="flex-none gap-10">
           <div className="dropdown dropdown-end">
@@ -30,7 +31,7 @@ const Navbar = () => {
             </label>
           </div>
           <button onClick={handleLogout} className="hidden lg:flex btn btn-outline btn-primary">Signout</button>
-        </div> : <Link to='/login'><button>Login</button></Link>}
+        </div> : <ActiveLink to='/login'><button>Login</button></ActiveLink>}
       </div>
     </div>
   );
