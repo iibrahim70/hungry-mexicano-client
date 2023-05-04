@@ -32,7 +32,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/recipe/:id',
-        element: <PrivateRoute><RecipeDetails></RecipeDetails></PrivateRoute>
+        element: <PrivateRoute><RecipeDetails></RecipeDetails></PrivateRoute>, 
+        loader: ({ params }) => fetch(`https://hungry-mexicano-server-iibrahim70.vercel.app/recipe/${params.id}`)
       },
     ]
   }
