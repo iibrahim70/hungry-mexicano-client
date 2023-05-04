@@ -57,8 +57,8 @@ const Register = () => {
       <div className="md:w-1/3 max-w-sm">
         <div className="text-center md:text-left py-4">
           <h2 className="text-xl font-bold my-5">Register with</h2>
-          <button onClick={handleGoogleSignIn} className='btn'>Register with Google</button>
-          <button onClick={handleGithubSignIn} className='btn'>Register with Github</button>
+          <button onClick={handleGoogleSignIn} className='btn mr-5'>Sign In with Google</button>
+          <button onClick={handleGithubSignIn} className='btn'>Sign In with Github</button>
         </div>
         <form onSubmit={handleRegister}>
           <input className="text-sm w-full mb-4 px-4 py-2 border border-solid border-gray-300 rounded" type="text" name='name' placeholder="Full Name" required/>
