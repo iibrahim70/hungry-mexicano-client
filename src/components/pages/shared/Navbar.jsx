@@ -4,7 +4,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import ActiveLink from '../../layout/ActiveLink';
 
 const Navbar = () => {
-  const {user, logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const handleLogout = () => {
     logOut()
@@ -23,10 +23,10 @@ const Navbar = () => {
           <ActiveLink className='normal-case lg:text-xl' to='/blog'>Blog</ActiveLink>
         </div>
         { user ? <div className="flex-none gap-10">
-          <div className="dropdown dropdown-end">
+          <div className="dropdown dropdown-end tooltip tooltip-bottom" data-tip={user?.displayName}>
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <div className="w-10 rounded-full" >
+                <img src={user?.photoURL} />
               </div>
             </label>
           </div>

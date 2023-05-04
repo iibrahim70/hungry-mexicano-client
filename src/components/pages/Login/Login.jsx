@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
-  const { signIn, googleSignIn } = useContext(AuthContext);
-  const [error, setError] = useState("");
+  const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -12,10 +11,6 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
-      setError("password not valid need 8 char ");
-      return;
-    }
     signIn(email, password)
       .then(res => {
         const loggedUser = res.user;
@@ -38,8 +33,21 @@ const Login = () => {
   })
   }
 
+  const handleGithubSignIn = () => {
+    githubSignIn()
+      .then(res => {
+        const loggedUser = res.user;
+        console.log(loggedUser);
+        setUser(loggedUser);
+      })
+  .catch(err => {
+    console.log(err);
+  })
+  }
+
   return (
-    <form onSubmit={handleLogin} className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
+    
+    <div className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
       <div className="md:w-1/3 max-w-sm">
         <img
           src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
@@ -47,26 +55,17 @@ const Login = () => {
       </div>
       <div className="md:w-1/3 max-w-sm">
         <div className="text-center md:text-left">
-          <h2 className="mr-1">Sign in with</h2>
-          <button onClick={handleGoogleSignIn} className='btn'>Sign in with google</button>
-          <button
-            type="button"
-            className="inlne-block mx-1 h-9 w-9 rounded-full bg-blue-600 hover:bg-blue-700 uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="mx-auto h-3.5 w-3.5"
-              fill="currentColor"
-              viewBox="0 0 24 24">
-              <path
-                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-            </svg>
-          </button>
+          <h2 className="text-xl font-bold my-5">Sign in with</h2>
+          <button onClick={handleGoogleSignIn} className='btn mr-5'>Sign in with Google</button>
+          <button onClick={handleGithubSignIn} className='btn'>Sign in with Github</button>
         </div>
         <div className="my-5 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
           <p className="mx-4 mb-0 text-center font-semibold text-slate-500">Or</p>
         </div>
-        <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded" name='email' type="text" placeholder="Email Address" required />
-        <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded mt-4" name='password' type="password" placeholder="Password" required/>
+        <form onSubmit={handleLogin}>
+          <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded" name='email' type="text" placeholder="Email Address" required />
+          <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded mt-4" name='password' type="password" placeholder="Password" required />
+      
         <div className="mt-4 flex justify-between font-semibold text-sm">
           <label className="flex text-slate-500 hover:text-slate-600 cursor-pointer">
             <input className="mr-1" type="checkbox" />
@@ -77,11 +76,12 @@ const Login = () => {
         <div className="text-center md:text-left">
           <button className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider" type="submit">Login</button>
         </div>
+        </form>
         <div className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-left">
           Don't have an account? <Link className="text-red-600 hover:underline hover:underline-offset-4" to='/register'>Register</Link>
         </div>
       </div>
-    </form>
+    </div>
   );
 };
 
