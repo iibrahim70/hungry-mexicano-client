@@ -1,5 +1,5 @@
 # Hello from Hungry Mexicano 
-## Live netlify site link - https://hungry-mexicano.web.app/
+## Live site link - https://hungry-mexicano.web.app/
 
 * This is a mexican recipe website
 * This is a single page website
