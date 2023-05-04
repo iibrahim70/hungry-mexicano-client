@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -21,6 +21,18 @@ const Login = () => {
       })
   }
 
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(res => {
+        const loggedUser = res.user;
+        console.log(loggedUser);
+        setUser(loggedUser);
+      })
+  .catch(err => {
+    console.log(err);
+  })
+  }
+
   return (
     <form onSubmit={handleLogin} className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
       <div className="md:w-1/3 max-w-sm">
@@ -30,19 +42,8 @@ const Login = () => {
       </div>
       <div className="md:w-1/3 max-w-sm">
         <div className="text-center md:text-left">
-          <label className="mr-1">Sign in with</label>
-          <button
-            type="button"
-            className="mx-1 h-9 w-9 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-[0_4px_9px_-4px_#3b71ca]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="mx-auto h-3.5 w-3.5"
-              fill="currentColor"
-              viewBox="0 0 24 24">
-              <path
-                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-            </svg>
-          </button>
+          <h2 className="mr-1">Sign in with</h2>
+          <button onClick={handleGoogleSignIn} className='btn'>Sign in with google</button>
           <button
             type="button"
             className="inlne-block mx-1 h-9 w-9 rounded-full bg-blue-600 hover:bg-blue-700 uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca]">
