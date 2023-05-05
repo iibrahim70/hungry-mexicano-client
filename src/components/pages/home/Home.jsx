@@ -15,14 +15,14 @@ const Home = () => {
 
   return (
     <div>
-      <div className='flex mt-10 mx-10'>
+      <div className='flex mt-10 lg:mx-10'>
         <button className="btn btn-success">Latest</button>
         <Marquee speed={60}>
           Mexican food is a blend of indigenous (Indian) and Spanish influences. At the heart of the cuisine of this beautiful country are three very important crops: corn, beans, and chilies. These native foods are cheap and widely available.
         </Marquee>
       </div>
       <Carousel></Carousel>
-        <div className='grid grid-cols-3 lg:w-4/5 mx-auto my-10'>
+        <div className='grid lg:grid-cols-3 lg:w-4/5 mx-auto my-10'>
           {
             recipes.map(recipe => <CardRecipe key={recipe.id} recipe={recipe}></CardRecipe>)
           }
