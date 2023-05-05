@@ -27,16 +27,13 @@ const RecipeDetails = () => {
   return (
     <div>
       <ToastContainer />
-      <div className='mx-5 my-20 grid grid-cols-2 items-center gap-10'>
-        <div>
-          <LazyLoadImage src={recipeDetails.chefPicture} alt="chef images" />
-        </div>
-        <div>
-          <h2 className='text-2xl font-bold py-2'>Name: {recipeDetails.chefName}</h2>
-          <p className='text-xl font-semibold py-2'>Years of experience: {recipeDetails.yearsOfExperience}</p>
-          <p className='text-xl font-semibold py-2'>Numbers of recipes: {recipeDetails.numberOfRecipes}</p>
-          <p className='text-xl font-semibold py-2'>Likes: {recipeDetails.likes.facebook}</p>
-        </div>
+      <LazyLoadImage className='w-full h-screen object-fill px-5 py-10' src={recipeDetails.chefPicture} alt="chef images" />
+      <div className='mx-5'>
+          <h2 className='text-2xl font-bold pb-1'>{recipeDetails.chefName}</h2>
+        <p className='text-xl pb-1'><span className='font-semibold'>Short Bio:</span> {recipeDetails.bio}</p>
+        <p className='text-xl pb-1'><span className='font-semibold'>Years of experience:</span> {recipeDetails.yearsOfExperience}</p>
+        <p className='text-xl pb-1'><span className='font-semibold'>Numbers of recipes:</span> {recipeDetails.numberOfRecipes}</p>
+        <p className='text-xl pb-1'><span className='font-semibold'>Likes:</span> {recipeDetails.likes.facebook}</p>
       </div>
       <div className='flex justify-evenly mx-5 my-10'>
         <div className="card w-80 bg-base-100 shadow-xl mb-5">
