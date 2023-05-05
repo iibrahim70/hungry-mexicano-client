@@ -29,12 +29,12 @@ const AuthProvider = ({children}) => {
 
   const googleSignIn = () => {
     setLoading(true);
-    signInWithPopup(auth, googleProvider); 
+    return signInWithPopup(auth, googleProvider); 
   }
 
   const githubSignIn = () => {
     setLoading(true);
-    signInWithPopup(auth, githubProvider); 
+    return signInWithPopup(auth, githubProvider); 
   }
 
   const updateUserProfile = (profile) => {
