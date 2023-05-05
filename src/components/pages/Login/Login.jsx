@@ -1,9 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
   const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const [error, setError] = useState(''); 
+  const navigate = useNavigate(); 
+  const location = useLocation(); 
+  const from = location.state?.from?.pathname || '/'; 
+
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -15,6 +20,7 @@ const Login = () => {
       .then(res => {
         const loggedUser = res.user;
         console.log(loggedUser);
+        navigate(from, {replace: true});
       })
       .catch(err => {
         console.log(err);
@@ -27,10 +33,11 @@ const Login = () => {
         const loggedUser = res.user;
         console.log(loggedUser);
         setUser(loggedUser);
+        navigate('/');
       })
-  .catch(err => {
-    console.log(err);
-  })
+      .catch(err => {
+        console.log(err);
+      })
   }
 
   const handleGithubSignIn = () => {
@@ -39,14 +46,18 @@ const Login = () => {
         const loggedUser = res.user;
         console.log(loggedUser);
         setUser(loggedUser);
+        navigate('/');
       })
-  .catch(err => {
-    console.log(err);
-  })
+      .catch(err => {
+        console.log(err);
+      })
+
+    if (password.length < 6) {
+      setError('password must be at least 6 characters');
+    }
   }
 
   return (
-    
     <div className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
       <div className="md:w-1/3 max-w-sm">
         <img
@@ -65,7 +76,7 @@ const Login = () => {
         <form onSubmit={handleLogin}>
           <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded" name='email' type="text" placeholder="Email Address" required />
           <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded mt-4" name='password' type="password" placeholder="Password" required />
-      
+          <p className='text-red-500 font-bold'>{error}</p>
         <div className="mt-4 flex justify-between font-semibold text-sm">
           <label className="flex text-slate-500 hover:text-slate-600 cursor-pointer">
             <input className="mr-1" type="checkbox" />
@@ -86,3 +97,12 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
+
+
+
+
+
+

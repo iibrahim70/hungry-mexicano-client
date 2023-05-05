@@ -28,14 +28,17 @@ const AuthProvider = ({children}) => {
   }
 
   const googleSignIn = () => {
+    setLoading(true);
     signInWithPopup(auth, googleProvider); 
   }
 
   const githubSignIn = () => {
+    setLoading(true);
     signInWithPopup(auth, githubProvider); 
   }
 
   const updateUserProfile = (profile) => {
+    setLoading(true);
     return updateProfile(auth.currentUser, profile); 
   }
 

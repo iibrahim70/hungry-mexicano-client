@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
   const { createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const navigate = useNavigate(); 
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/'; 
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -17,6 +20,7 @@ const Register = () => {
     .then(res => {
       const createdUser = res.user; 
       console.log(createdUser);
+      navigate(from);
     })
     .catch(err => {
       console.log(err);
