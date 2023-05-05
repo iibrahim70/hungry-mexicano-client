@@ -27,7 +27,7 @@ const RecipeDetails = () => {
   return (
     <div>
       <ToastContainer />
-      <div className='lg:w-4/5 mx-auto my-20 grid grid-cols-2 items-center gap-10'>
+      <div className='mx-5 my-20 grid grid-cols-2 items-center gap-10'>
         <div>
           <LazyLoadImage src={recipeDetails.chefPicture} alt="chef images" />
         </div>
@@ -38,7 +38,7 @@ const RecipeDetails = () => {
           <p className='text-xl font-semibold py-2'>Likes: {recipeDetails.likes.facebook}</p>
         </div>
       </div>
-      <div className='grid grid-cols-3 lg:w-4/5 mx-auto my-10'>
+      <div className='flex justify-evenly mx-5 my-10'>
         <div className="card w-80 bg-base-100 shadow-xl mb-5">
           <div className="card-body">
             <h2 className='text-2xl font-bold'>{recipeDetails.recipe_one.recipe_name1}</h2>
