@@ -1,20 +1,21 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Carousel = () => {
   return (
     <div className='mx-5'>
       <div className="carousel w-full">
         <div id="item1" className="carousel-item w-full">
-          <img src="https://img.delicious.com.au/ku6i2Q-s/del/2018/05/mexican-black-bean-and-corn-nachos-81127-2.jpg" className="w-full h-screen" />
+          <LazyLoadImage src="https://www.foodnetwork.com/content/dam/images/food/fullset/2019/10/28/0/FNK_Red-Pork-Tamales_H2_s4x3.jpg" className="w-full h-screen" />
         </div>
         <div id="item2" className="carousel-item w-full">
-          <img src="https://www.allrecipes.com/thmb/-I7C6eORCGjCW0HfPT6L-mbXAWo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/5928063-easy-mexican-casserole-Juvee336-1x1-1-bd97c7ef03ff42cbb775a9cba767bf0e.jpg" className="w-full h-screen" />
+          <LazyLoadImage src="https://insanelygoodrecipes.com/wp-content/uploads/2022/10/Homemade-Vegan-Mexican-Beef-Tacos-with-Herbs.jpg" className="w-full h-screen" />
         </div>
         <div id="item3" className="carousel-item w-full">
-          <img src="https://img.bestrecipes.com.au/S8iYd9_b/br/2018/10/grilled-tequila-lime-chicken-nachos-recipe-523507-1.jpg" className="w-full h-screen" />
+          <LazyLoadImage src="https://www.thespruceeats.com/thmb/-g-eTieVF44gcjxac5wyG0egAo0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/easy-fajitas-recipe-3052908-hero-01-e4dc09dd6b28488191a9ddf700c7441b.jpg" className="w-full h-screen" />
         </div>
         <div id="item4" className="carousel-item w-full">
-          <img src="https://www.eatingonadime.com/wp-content/uploads/2012/03/Easy-Mexican-Casserole_-49.jpg" className="w-full h-screen" />
+          <LazyLoadImage src="https://www.seriouseats.com/thmb/2qh8uyOJMFWewNqgJbzJ8gvO1Dc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2017__01__20170131-quesadillas-three-variations-7-1c3c71a59e9245f380fce6a6d70d3c5b.jpg" className="w-full h-screen" />
         </div>
       </div>
       <div className="flex justify-center w-full pt-2 gap-2">
