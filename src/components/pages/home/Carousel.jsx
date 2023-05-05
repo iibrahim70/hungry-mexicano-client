@@ -2,7 +2,7 @@ import React from 'react';
 
 const Carousel = () => {
   return (
-    <div className='mt-10'>
+    <div className='mx-5'>
       <div className="carousel w-full">
         <div id="item1" className="carousel-item w-full">
           <img src="https://img.delicious.com.au/ku6i2Q-s/del/2018/05/mexican-black-bean-and-corn-nachos-81127-2.jpg" className="w-full h-screen" />
@@ -17,7 +17,7 @@ const Carousel = () => {
           <img src="https://www.eatingonadime.com/wp-content/uploads/2012/03/Easy-Mexican-Casserole_-49.jpg" className="w-full h-screen" />
         </div>
       </div>
-      <div className="flex justify-center w-full py-2 gap-2">
+      <div className="flex justify-center w-full pt-2 gap-2">
         <a href="#item1" className="btn btn-xs">1</a>
         <a href="#item2" className="btn btn-xs">2</a>
         <a href="#item3" className="btn btn-xs">3</a>

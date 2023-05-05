@@ -1,16 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
-import Swal from 'sweetalert2';
 import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
-  const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const { signIn, setUser, googleSignIn, githubSignIn } = useContext(AuthContext);
   const [error, setError] = useState(''); 
   const navigate = useNavigate(); 
   const location = useLocation(); 
-  const from = location.state?.from?.pathname || '/'; 
+  const from = location.state?.from || '/'; 
 
+  console.log('helo');
 
   const handleLogin = (event) => {
     event.preventDefault();
