@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import Swal from 'sweetalert2';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
   const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
@@ -23,6 +25,7 @@ const Login = () => {
         navigate(from, {replace: true});
       })
       .catch(err => {
+        toast.error('Check Your Email & Password Again!!'); 
         console.log(err);
       })
   }
@@ -33,7 +36,7 @@ const Login = () => {
         const loggedUser = res.user;
         console.log(loggedUser);
         setUser(loggedUser);
-        navigate('/');
+        navigate(from, { replace: true });
       })
       .catch(err => {
         console.log(err);
@@ -46,19 +49,16 @@ const Login = () => {
         const loggedUser = res.user;
         console.log(loggedUser);
         setUser(loggedUser);
-        navigate('/');
+        navigate(from, { replace: true });
       })
       .catch(err => {
         console.log(err);
       })
-
-    if (password.length < 6) {
-      setError('password must be at least 6 characters');
-    }
   }
 
   return (
     <div className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
+      <ToastContainer></ToastContainer>
       <div className="md:w-1/3 max-w-sm">
         <img
           src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
