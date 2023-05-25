@@ -6,7 +6,6 @@ import Category from './Category';
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]); 
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('https://hungry-mexicano-server-iibrahim70.vercel.app/recipe')

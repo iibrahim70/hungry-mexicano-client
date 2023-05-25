@@ -1,34 +1,34 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../components/layout/Main";
-import Home from "../components/pages/home/Home";
-import Register from "../components/pages/Login/Register";
-import ErrorPage from "../components/pages/errorpage/ErrorPage";
-import Blog from "../components/pages/blog/Blog";
-import RecipeDetails from "../components/pages/home/RecipeDetails";
+import Register from "../pages/Login/Register";
+import ErrorPage from "../pages/errorpage/ErrorPage";
+import Blog from "../pages/blog/Blog";
+import RecipeDetails from "../pages/home/RecipeDetails";
 import PrivateRoute from "./PrivateRoute";
-import Login from "../components/pages/login/Login";
+import Login from "../pages/login/Login";
+import Home from "../pages/home/Home";
+import Main from "../components/layout/Main";
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Main></Main>,
-    errorElement: <ErrorPage></ErrorPage>,
+    element: <Main/>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home/>
       },
       {
         path: '/blog',
-        element: <Blog></Blog>
+        element: <Blog/>
       },
       {
         path: '/login',
-        element: <Login></Login>
+        element: <Login/>
       },
       {
         path: '/register',
-        element: <Register></Register>
+        element: <Register/>
       },
       {
         path: '/recipe/:id',
