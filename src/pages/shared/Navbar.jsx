@@ -13,8 +13,8 @@ const Navbar = () => {
   }
 
   return (
-    <div className='bg-base-300'>
-      <div className="navbar px-5">
+    <div className='bg-base-100 w-[90%] mx-auto'>
+      <div className="navbar">
         <div className="flex-1">
           <Link className="normal-case text-base font-bold lg:text-xl" to='/'>Hungry Mexicano</Link>
         </div>
@@ -30,7 +30,7 @@ const Navbar = () => {
             </div>
           </label>
         </div>
-          <button onClick={handleLogout} className="hidden lg:flex btn btn-outline btn-primary">Signout</button>
+          <button onClick={handleLogout} className="hidden lg:flex btn-primaryy">Signout</button>
         </div> : <ActiveLink to='/login'><button>Login</button></ActiveLink>}
       </div>
     </div>

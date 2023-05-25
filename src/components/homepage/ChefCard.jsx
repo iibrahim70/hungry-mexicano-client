@@ -7,8 +7,8 @@ const ChefCard = ({recipe}) => {
   return (
     <div className="bg-white shadow-xl rounded-md">
       <LazyLoadImage src={chefPicture} alt="chef images" />
-      <div className='ms-5 space-y-2 pb-2'>
-        <h2 className="text-xl font-semibold my-2">{chefName}</h2>
+      <div className='ms-5 space-y-2 pb-3'>
+        <h2 className="text-xl font-semibold mt-2">{chefName}</h2>
         <p>Years of experience: {yearsOfExperience}</p>
         <p>Numbers of recipes: {numberOfRecipes}</p>
         <p>Likes: {likes.facebook}</p>
