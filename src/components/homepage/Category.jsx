@@ -2,7 +2,7 @@ import React from 'react';
 
 const Category = () => {
   return (
-    <div className="container mx-auto px-5">
+    <>
       <h2 className="text-2xl font-bold mb-10 text-center">Popular Categories</h2>
       <div className="flex flex-wrap -mx-5">
         <div className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
@@ -60,7 +60,7 @@ const Category = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
