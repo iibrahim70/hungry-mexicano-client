@@ -18,7 +18,7 @@ export default function App() {
         )}
       </Pdf>
       <div ref={ref}>
-        <div className="mx-5 py-10">
+        <div className="py-10">
           <div className='py-2'>
             <h2 className='capitalize text-xl font-bold'>Tell us the differences between uncontrolled and controlled components.</h2>
             <p className='text-justify'>In React, controlled components refer to components that have their state and behavior controlled by the parent component. These components rely on props passed down from the parent component to update their state and behavior. Uncontrolled components refer to components that manage their own state internally.</p>

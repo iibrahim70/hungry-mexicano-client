@@ -3,7 +3,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Carousel = () => {
   return (
-    <div className='mx-5'>
+    <>
       <div className="carousel w-full">
         <div id="item1" className="carousel-item w-full">
           <LazyLoadImage src="https://www.foodnetwork.com/content/dam/images/food/fullset/2019/10/28/0/FNK_Red-Pork-Tamales_H2_s4x3.jpg" className="w-full h-screen" />
@@ -24,7 +24,7 @@ const Carousel = () => {
         <a href="#item3" className="btn btn-xs">3</a>
         <a href="#item4" className="btn btn-xs">4</a>
       </div>
-    </div>
+    </>
   );
 };
 

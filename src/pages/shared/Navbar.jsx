@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import ActiveLink from '../../components/layout/ActiveLink';
+import ActiveLink from '../../components/activelink/ActiveLink';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Navbar = () => {
