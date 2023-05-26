@@ -4,10 +4,11 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ChefCard = ({recipe}) => {
   const { chefPicture, chefName, yearsOfExperience, numberOfRecipes, likes } = recipe;
+  
   return (
-    <div className="bg-white shadow-xl rounded-md">
+    <div className="shadow-xl rounded-md">
       <LazyLoadImage className='h-[55%] w-full' src={chefPicture} alt="chef images" />
-      <div className='ms-5 space-y-2 pb-3'>
+      <div className='ms-5 space-y-2'>
         <h2 className="text-xl font-semibold mt-2">{chefName}</h2>
         <div className='text-gray-700'>
           <p>Years of experience: {yearsOfExperience}</p>
