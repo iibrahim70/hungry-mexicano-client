@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
-import Register from "../pages/Login/Register";
+import Signup from "../pages/register/Signup";
 import ErrorPage from "../pages/errorpage/ErrorPage";
 import Blog from "../pages/blog/Blog";
 import PrivateRoute from "./PrivateRoute";
-import Login from "../pages/login/Login";
+import Signin from "../pages/register/Signin";
 import Home from "../pages/home/Home";
-import Main from "../components/layout/Main";
-import RecipeDetails from "../components/homepage/RecipeDetails";
+import Main from "../layout/Main";
+import RecipeDetails from "../components/recipedetails/RecipeDetails";
 
 const router = createBrowserRouter([
   {
@@ -23,12 +23,12 @@ const router = createBrowserRouter([
         element: <Blog/>
       },
       {
-        path: '/login',
-        element: <Login/>
+        path: '/signin',
+        element: <Signin/>
       },
       {
-        path: '/register',
-        element: <Register/>
+        path: '/signup',
+        element: <Signup/>
       },
       {
         path: '/recipe/:id',

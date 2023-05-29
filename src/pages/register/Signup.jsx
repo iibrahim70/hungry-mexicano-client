@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
-const Register = () => {
+const Signup = () => {
   const { createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
   const navigate = useNavigate(); 
   const location = useLocation();
@@ -80,11 +80,11 @@ const Register = () => {
           </div>
         </form>
         <div className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-left">
-          Already have an account? <Link className="text-red-600 hover:underline hover:underline-offset-4" to='/login'>Login</Link>
+          Already have an account? <Link className="text-red-600 hover:underline hover:underline-offset-4" to='/signin'>Login</Link>
         </div>
       </div>
     </div>
   );
 };
 
-export default Register;
+export default Signup;
