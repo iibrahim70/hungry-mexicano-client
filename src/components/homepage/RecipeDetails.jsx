@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-toastify/dist/ReactToastify.css';
 import RecipeDetailsCard from './RecipeDetailsCard';
 
@@ -9,14 +8,16 @@ const RecipeDetails = () => {
 
   return (
     <>
-      <LazyLoadImage className='w-full py-10' src={recipeDetails.chefPicture} alt="chef images" />
+      <img className='w-full pb-10' src={recipeDetails.chefPicture} alt="chef images" />
       
-      <div>
-        <h2 className='text-2xl font-bold pb-1'>{recipeDetails.chefName}</h2>
-        <p className='text-xl pb-1'><span className='font-semibold'>Short Bio:</span> {recipeDetails.bio}</p>
-        <p className='text-xl pb-1'><span className='font-semibold'>Years of experience:</span> {recipeDetails.yearsOfExperience}</p>
-        <p className='text-xl pb-1'><span className='font-semibold'>Numbers of recipes:</span> {recipeDetails.numberOfRecipes}</p>
-        <p className='text-xl pb-1'><span className='font-semibold'>Likes:</span> {recipeDetails.likes.facebook}</p>
+      <div className='space-y-2'>
+        <h2 className='text-3xl font-bold'>{recipeDetails.chefName}</h2>
+        <div className='text-xl opacity-60'>
+          <p>Short Bio: {recipeDetails.bio}</p>
+          <p>Years of experience: {recipeDetails.yearsOfExperience}</p>
+          <p>Numbers of recipes: {recipeDetails.numberOfRecipes}</p>
+          <p>Likes: {recipeDetails.likes.facebook}</p>
+        </div>
       </div>
       
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 py-10'>

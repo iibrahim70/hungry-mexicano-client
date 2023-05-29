@@ -2,14 +2,14 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'hero-pattern': "url('https://thumbs.dreamstime.com/b/mexican-food-mix-colorful-background-mexico-copyspace-frame-66442175.jpg')",
-      }
-    }
+    extend: {},
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: false,
+  },
 }
+
