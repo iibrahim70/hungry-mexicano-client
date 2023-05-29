@@ -13,8 +13,8 @@ const Navbar = () => {
   }
 
   return (
-    <div className='bg-base-100 w-[90%] mx-auto'>
-      <div className="navbar">
+    <div className='bg-slate-700'>
+      <div className="navbar w-[90%] mx-auto mb-10">
         <div className="flex-1">
           <Link className="normal-case text-base font-bold lg:text-xl" to='/'>Hungry Mexicano</Link>
         </div>
