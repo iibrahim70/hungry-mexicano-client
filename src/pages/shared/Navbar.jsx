@@ -13,7 +13,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='bg-slate-700'>
+    <div className='bg-white shadow-md'>
       <div className="navbar w-[90%] mx-auto mb-10">
         <div className="flex-1">
           <Link className="normal-case text-base font-bold lg:text-xl" to='/'>Hungry Mexicano</Link>
@@ -31,7 +31,7 @@ const Navbar = () => {
           </label>
         </div>
           <button onClick={handleLogout} className="hidden lg:flex btn-primaryy">Signout</button>
-        </div> : <ActiveLink to='/login'><button>Login</button></ActiveLink>}
+        </div> : <ActiveLink to='/signin'><button>Login</button></ActiveLink>}
       </div>
     </div>
   );

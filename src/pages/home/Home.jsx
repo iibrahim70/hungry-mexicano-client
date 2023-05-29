@@ -1,7 +1,7 @@
 import React from 'react';
-import Category from '../../components/homepage/Category';
-import Chef from '../../components/homepage/Chef';
-import Banner from '../../components/homepage/Banner';
+import Category from '../../components/category/Category';
+import Chef from '../../components/chef/Chef';
+import Banner from '../../components/banner/Banner';
 
 const Home = () => {
   return (

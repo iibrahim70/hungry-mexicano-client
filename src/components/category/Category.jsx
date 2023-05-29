@@ -49,8 +49,8 @@ const Category = () => {
         {categories.map((category, index) => (
           <div key={index} className="rounded-md shadow-2xl">
             <img className="w-full h-64 object-cover" src={category.image} alt={`Category ${index + 1}`} />
-            <div className="ms-5 space-y-2">
-              <h3 className="text-xl font-semibold mt-2">{category.title}</h3>
+            <div className="p-5 space-y-2 text-justify">
+              <h3 className="text-xl font-semibold">{category.title}</h3>
               <p className="opacity-60 leading-relaxed">{category.description}</p>
             </div>
           </div>

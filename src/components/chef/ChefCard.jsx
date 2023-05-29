@@ -6,9 +6,9 @@ const ChefCard = ({recipe}) => {
   
   return (
     <div className="shadow-2xl rounded-md">
-      <img className='h-[55%] w-full' src={chefPicture} alt="chef images" />
-      <div className='ms-5 space-y-2 h-[45%]'>
-        <h2 className="text-xl font-semibold mt-2">{chefName}</h2>
+      <img className='w-full h-60 object-cover' src={chefPicture} alt="chef images" />
+      <div className='space-y-2 p-5'>
+        <h2 className="text-xl font-semibold">{chefName}</h2>
         <div className='opacity-60'>
           <p>Years of experience: {yearsOfExperience}</p>
           <p>Numbers of recipes: {numberOfRecipes}</p>
