@@ -1,4 +1,4 @@
-# Hungry Mexicano - Mexican Food Recipe Website [Visit Hungry Mexicano](https://hungry-mexicano.web.app/)
+# Hungry Mexicano - Food Recipe Website [Visit Hungry Mexicano](https://hungry-mexicano.web.app/)
 
 Welcome to Hungry Mexicano, a dedicated recipe book website exclusively showcasing the delicious flavors of Mexican cuisine. Immerse yourself in the vibrant world of Mexican cooking and explore a wide variety of authentic recipes curated by talented Mexican chefs.
 
