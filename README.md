@@ -36,10 +36,6 @@ Hungry Mexicano is a unique platform that celebrates the rich culinary heritage 
 
 - **Fun Feature**: Enjoy a delightful surprise on our blog page by generating and downloading a PDF containing intriguing information.
 
-## Folder Structure
-
-Our codebase adheres to a clean and organized folder structure, promoting code readability and maintainability. Components are intuitively organized with meaningful names, and comments are strategically placed to enhance comprehension.
-
 ## Technologies Used
 
 - React.js
